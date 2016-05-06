@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>jQuery Pager</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="../dist/pager.js"></script>
+
+</head>
+<body ng-app="app">
+
+<div class="page-container">
+    <div class="col-xs-10">
+
+        <div class="container content"></div>
+
+            <h1>Current page <span id="page-number">1</span> from 125</h1>
+            
+            <div id="pager-holder"></div>
+        <script>
+            $(document).ready(function() {
+            
+                $('#pager-holder').pager({
+                    itemsNumber: 2500,
+                    currentPage: 1,
+                    onClick: function(page)
+                    {
+                        $('#page-number').text(page);
+                    }
+                });
+            
+            });
+        </script>
+
+        <pre>
+         $(document).ready(function() {
+        
+            $('#pager-holder').pager({
+                itemsNumber: 2500,
+                currentPage: 1,
+                onClick: function(page)
+                {
+                    $('#page-number').text(page);
+                }
+            });
+        
+        });
+        </pre>
+    </div>
+</div>
+</body>
+</html>
